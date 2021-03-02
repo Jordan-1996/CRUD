@@ -1,8 +1,8 @@
 <h1>usuarios</h1>
 
-<%= link_to('Nuevo usuario',users_form_path) %>
+<%= link_to('Nuevo usuario',users_new_path) %>
 
 <% @users.each do |user| %>
-<p><%= user.name %> | <%= user.email%></p>
+<p><%= user.name %> | <%= user.email%> | <%= link_to('editar', users_edit_path(user))%> | <%= link_to('delete', users_destroy_path(user),method: :delete, data: {confirm: 'Are you sure?'})%> </p>  
 
 <% end %>

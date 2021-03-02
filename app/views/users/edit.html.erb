@@ -1,0 +1,22 @@
+<% if @user.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@user.errors.count, "error") %> prohibited this
+article from being saved:</h2>
+<ul>
+<% @user.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %> 
+
+ 
+<form action="<%=users_update_path(@user)%>" method="post"> <!--Nosotros decidimos q ruta escoger -->
+<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <label for="fname">Nombre:</label><br>
+  <input type="text" id="fname" name="name" value="<%= @user.name%>"><br>
+  <label for="lname">Last Email:</label><br>
+  <input type="email" id="lname" name="email" value="<%= @user.email%>"><br><br>
+  <input type="submit" value="actualizar">
+</form>
+<%= link_to('volver', users_index_path)%>

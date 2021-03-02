@@ -12,9 +12,9 @@ article from being saved:</h2>
 </div>
 <% end %> 
 
-<form method='post'action="/users/create"> 
-<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+<form method='post'action="/users/create">
   <label for="fname">Nombre:</label><br>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
   <input type="text" id="fname" name="name" value="John"><br>
   <label for="lname">Last Email:</label><br>
   <input type="email" id="lname" name="email" value="Doe@example.com"><br><br>
